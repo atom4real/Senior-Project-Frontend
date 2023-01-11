@@ -36,7 +36,6 @@
 
 <script>
 import axios from 'axios';
-import * as yup from 'yup';
 
 export default {
   name: 'LoginPage',
@@ -44,7 +43,7 @@ export default {
     return {
       email: '',
       password: '',
-
+      role: null,
     }
   },
   methods: {
@@ -57,20 +56,38 @@ export default {
           password: this.password,
 
         }
+
+        const RoleInfo = {
+          role: this.role
+        }
+
         axios
         .post('/api/login', formData)
         .then(response => {
             const token = response.data.jwt
+            const role = response.data.role
             this.$store.commit('setToken', token)
+            this.$store.commit('setRole', role)
 
             console.log(response)
             axios.defaults.headers.common['Authorization'] = 'JWT' + token
             localStorage.setItem("token", token)
+            localStorage.setItem("role", role)
             this.$router.push('/')
         })
         .catch(error => {
           console.log(error)
         })
+        // axios
+        // .get('/api/user', RoleInfo)
+        // .then(response => {
+        //   const getRole = response.data.role
+        //   this.$store.commit('setRole', getRole)
+        //   localStorage.setItem("role", getRole)
+        // })
+        // .catch(error => {
+        //   console.log(error)
+        // })
     }
   }
 }

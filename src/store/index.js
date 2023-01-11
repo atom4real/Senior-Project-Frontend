@@ -22,6 +22,7 @@ export default createStore({
         },
         setRole(state, role) {
             state.role = role
+            state.isAuthenticated = true
         },
         removeToken(state) {
             state.token = ''
