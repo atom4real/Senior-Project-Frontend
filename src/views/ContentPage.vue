@@ -12,7 +12,7 @@
                         <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                             Edit
                         </button>
-                        <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 ml-1 px-2 rounded">
+                        <button @click.prevent="deleteContent(content.ContentID)" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 ml-1 px-2 rounded">
                             Delete
                         </button>
                     </div>
@@ -62,6 +62,17 @@ export default {
                 console.log(this.contents)
             })
         },
+        deleteContent(id) {
+            // axios.delete(`/api/conetnt?ids=${ContentID}`)
+            if(!confirm('Are you sure?')){
+                return ;
+            }
+            axios.delete('/api/content/'+id)
+            .then((response) => {
+                this.refeshData();
+                alert("Delete Successfully!");
+            });
+        }
     }
 }
 </script>

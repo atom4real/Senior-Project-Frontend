@@ -90,6 +90,7 @@ export default {
                 // this.date=response.data.DateOfPosting;
                 // this.photo=response.data.PhotoFileName;
                 console.log(response)
+                this.$router.push('/content-list')
             })
             .catch(error => {
                 console.log(error)
