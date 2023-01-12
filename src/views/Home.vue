@@ -40,7 +40,7 @@ export default {
     methods: {
         getMe(e) {
             axios
-                .get("/user")
+                .get("/api/user")
                 .then(response => {
                     console.log(response)
                     this.user_data = response.data.email

@@ -9,6 +9,7 @@
       <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52" data-theme="winter">
         <li data-theme="winter"><router-link :to="{ name: 'Home' }">Home</router-link></li>
         <li data-theme="winter"><router-link :to="{ name: 'Home' }">About us</router-link></li>
+        <li data-theme="winter"><router-link :to="{ name: 'ContentPage' }">View contents</router-link></li>
         <li data-theme="winter"><router-link :to="{ name: 'Register' }">Register</router-link></li>
       </ul>
     </div>
@@ -29,12 +30,12 @@
       <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52" data-theme="winter">
         <li data-theme="winter">
           <a class="justify-between" data-theme="winter">
-            Profile
+            <router-link :to="{ name: 'ProfilePage' }">Profile</router-link>
             <span class="badge" data-theme="winter">New</span>
           </a>
         </li>
         <li data-theme="winter"><a>Settings</a></li>
-        <li data-theme="winter" v-if="this.$store.state.role === 'admin'"><a>Content</a></li>
+        <li data-theme="winter" v-if="this.$store.state.role === 'admin'"><router-link :to="{ name: 'CreateContents' }">Create content</router-link></li>
         <li data-theme="winter" v-if="!this.$store.state.token"><router-link :to="{ name: 'Login' }">Login</router-link></li>
         <li data-theme="winter" v-if="this.$store.state.token"><a @click="logout">Logout</a></li>
       </ul>

@@ -50,5 +50,8 @@ export default {
     } else {
       return false
     }
+  },
+  getContentDetail(id) {
+    return apiClient.get('/content/' + id)
   }
 }

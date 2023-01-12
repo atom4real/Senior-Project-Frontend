@@ -46,7 +46,7 @@
             </div>
         </div>
         <div class="mb-80 btn bg-white hover:bg-blue-700 text-black hover:text-white font-bold py-2 px-4 border border-white hover:border-white " :style="{'border-radius': '30px'}">
-        READ MORE!
+        <router-link :to="{ name: 'ContentPage' }">READ MORE!</router-link>
     </div>
     </div>
 </template>

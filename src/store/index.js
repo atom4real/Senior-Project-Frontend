@@ -3,6 +3,9 @@ export default createStore({
     state: {
         token: '',
         role: '',
+        name: '',
+        email: '',
+        content: [],
         isAuthenticated: false
     },
     mutations: {
@@ -22,6 +25,14 @@ export default createStore({
         },
         setRole(state, role) {
             state.role = role
+            state.isAuthenticated = true
+        },
+        setName(state, name) {
+            state.name = name
+            state.isAuthenticated = true
+        },
+        setEmail(state, email) {
+            state.email = email
             state.isAuthenticated = true
         },
         removeToken(state) {

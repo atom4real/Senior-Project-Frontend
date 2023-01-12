@@ -66,13 +66,20 @@ export default {
         .then(response => {
             const token = response.data.jwt
             const role = response.data.role
+            const name = response.data.name
+            const email = response.data.email
+
             this.$store.commit('setToken', token)
             this.$store.commit('setRole', role)
+            this.$store.commit('setName', name)
+            this.$store.commit('setEmail', email)
 
             console.log(response)
             axios.defaults.headers.common['Authorization'] = 'JWT' + token
             localStorage.setItem("token", token)
             localStorage.setItem("role", role)
+            localStorage.setItem("name", name)
+            localStorage.setItem("email", email)
             this.$router.push('/')
         })
         .catch(error => {
