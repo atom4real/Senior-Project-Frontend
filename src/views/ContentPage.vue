@@ -18,16 +18,13 @@
                             Delete
                         </button>
                     </div>
-                    {{ content.ContentID }}
-                    
                     <figure class="px-10 pt-10">
                         <img :src="'http://127.0.0.1:8000/Photos/'+content.PhotoFileName" alt="Shoes" class="rounded-xl" />
                      </figure>
-                     <div>{{ content.PhotoFileName }}</div>
                     <div class="card-body items-center text-center">
                         <h2 class="card-title">{{ content.ContentTitle }}</h2>
                         <p>{{ content.ContentDescription }}</p>
-                        <p>{{ content.DateOfPosting }}</p>
+                        <p>Posted: {{ content.DateOfPosting }}</p>
                         <div class="card-actions">
                             <button class="btn btn-primary" :to="{name: 'ContentDetailPage', params: { id: contents.ContentID }} ">READ MORE</button>
                         </div>
@@ -63,7 +60,7 @@
                                         photo
                                     </label>
                                     <div class="p-2 w-50">
-                                        <img width="250px" height="250px" :src="PhotoPath+PhotoFileName" alt="img" />
+                                        <img :src="'http://127.0.0.1:8000/Photos/'+content.PhotoFileName" alt="img" />
                                     </div>
                                     <input class="shadow appearance-none w-full py-2 px-3 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" id="photo" type="file" @change="imageUpload">
                                 </div>

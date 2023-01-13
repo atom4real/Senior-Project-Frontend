@@ -8,7 +8,12 @@
         </div>
         <div class="font-extrabold text-2xl leading-10 text-white mb-20 pb-20 flex justify-center">
             <div class="card w-96 bg-base-100 shadow-xl">
-                <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+                <figure >
+                    <div class="p-10 w-50">
+                        <img v-if="this.$store.state.role === 'admin'" :src="'http://127.0.0.1:8000/Photos/admin.png'" alt="img" />
+                        <img v-if="this.$store.state.role === 'customer'" :src="'http://127.0.0.1:8000/Photos/customer.png'" alt="img" />
+                    </div>
+                </figure>
                 <div class="card-body py-10">
                     <p class="text-center text-xl">Name: {{ this.$store.state.name }}</p>
                     <p class="text-center text-xl">Email: {{ this.$store.state.email }}</p>
@@ -39,7 +44,7 @@ export default {
             axios.get('/api/user')
             .then(response => {
                 this.contents=response.data;
-                console.log(this.contents)
+                console.log(response.data)
             })
         },
     }
