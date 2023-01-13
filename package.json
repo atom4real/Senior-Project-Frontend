@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "axios": "^1.2.1",
+    "flowbite": "^1.6.2",
+    "tw-elements": "^1.0.0-alpha13",
     "vee-validate": "^2.2.15",
     "vue": "^3.2.45",
     "vue-moment": "^4.1.0",

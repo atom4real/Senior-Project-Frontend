@@ -20,7 +20,7 @@
                         <label for="description" class="flex justify-start mb-2 text-sm font-medium text-gray-900 dark:text-black  ">Descriptions</label>
                         <textarea rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" id="description" type="text" v-model="description" placeholder="descriptions..."></textarea>
                     </div>
-                    <!-- <div class="mb-4">
+                    <div class="mb-4">
                         <label class="text-gray-700 text-sm font-bold mb-2 flex justify-start" for="date">
                             Date
                         </label>
@@ -30,9 +30,12 @@
                         <label class="text-gray-700 text-sm font-bold mb-2 flex justify-start" for="date">
                             photo
                         </label>
-                        <input class="shadow appearance-none w-full py-2 px-3 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" id="photo" type="text" v-model="photo">
+                        <div class="p-2 w-50">
+                            <img width="250px" height="250px" :src="PhotoPath+PhotoFileName" alt="img" />
+                        </div>
+                        <input class="shadow appearance-none w-full py-2 px-3 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" id="photo" type="file" @change="imageUpload">
                         
-                    </div> -->
+                    </div>
                     <!-- <div class="mb-4">
                         <div class="flex items-center justify-center w-full">
                             <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-40 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
@@ -41,7 +44,7 @@
                                     <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
                                     <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
                                 </div>
-                                <input id="dropzone-file" type="file" class="hidden" />
+                                <input id="dropzone-file" type="file" @change="imageUpload" />
                             </label>
                         </div> 
                     </div> -->
@@ -68,7 +71,8 @@ export default {
             title: '',
             description: '',
             date: '',
-            photo: '',
+            PhotoFileName: 'content4.jpeg',
+            PhotoPath: 'http://127.0.0.1:8000/Photos/',
         }
     },
     mounted() {
@@ -79,8 +83,8 @@ export default {
             const contentData = {
                 ContentTitle: this.title,
                 ContentDescription: this.description,
-                // date: this.date,
-                // photo: this.photo,
+                DateOfPosting: this.date,
+                PhotoFileName: this.PhotoFileName,
             }
             
             axios.post('/api/content', contentData)
@@ -96,6 +100,16 @@ export default {
                 console.log(error)
             })
         },
+
+        imageUpload(event) {
+            let formData = new FormData()
+            formData.append('file', event.target.files[0])
+            axios.post('/api/content/savefile', formData)
+            .then((response => {
+                this.PhotoFileName=response.data
+                console.log(this.PhotoFileName)
+            }))
+        }
     }
 }
 </script>

@@ -30,5 +30,7 @@ module.exports = {
       '2xl': '6rem',
     },
   },
-  plugins: [require("daisyui")],
+  plugins: [
+    require("daisyui"),
+  ],
 }
