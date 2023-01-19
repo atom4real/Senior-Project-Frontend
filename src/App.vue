@@ -10,7 +10,7 @@
         <li data-theme="winter"><router-link :to="{ name: 'Home' }">Home</router-link></li>
         <li data-theme="winter"><router-link :to="{ name: 'Home' }">About us</router-link></li>
         <li data-theme="winter"><router-link :to="{ name: 'ContentPage' }">View contents</router-link></li>
-        <li data-theme="winter"><router-link :to="{ name: 'Register' }">Register</router-link></li>
+        <!-- <li data-theme="winter"><router-link :to="{ name: 'Register' }">Register</router-link></li> -->
       </ul>
     </div>
   </div>
@@ -36,7 +36,7 @@
             <span class="badge" data-theme="winter">New</span>
           </a>
         </li>
-        <li data-theme="winter"><a>Settings</a></li>
+        <!-- <li data-theme="winter"><a>Settings</a></li> -->
         <li data-theme="winter" v-if="this.$store.state.role === 'admin'"><router-link :to="{ name: 'CreateContents' }">Create content</router-link></li>
         <li data-theme="winter" v-if="!this.$store.state.token"><router-link :to="{ name: 'Login' }">Login</router-link></li>
         <li data-theme="winter" v-if="this.$store.state.token"><a @click="logout">Logout</a></li>
