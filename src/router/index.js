@@ -47,22 +47,12 @@ const routes = [
         path: '/content-list',
         name: 'ContentPage',
         component: ContentPage,
+    },
+    {
+        path: '/content-list/:id',
+        name: 'ContentDetailPage',
+        component: ContentDetailPage,
         props: true,
-        children: [
-            {
-                path: '/content-list/:id',
-                name: 'ContentDetailPage',
-                component: ContentDetailPage,
-                beforeEnter: (to) => {
-                    console.log(to.params.id)
-                    axios.get('/content/' + to.params.id)
-                    .then((response) => {
-                        Store.this.state.content = response.data
-                      })
-                },
-                props: true,
-            }
-        ]
     },
     {
         path: '/create-content',

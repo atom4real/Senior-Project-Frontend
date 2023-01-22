@@ -26,7 +26,7 @@
                         <p>{{ content.ContentDescription }}</p>
                         <p>Posted: {{ content.DateOfPosting }}</p>
                         <div class="card-actions">
-                            <button class="btn btn-primary" :to="{name: 'ContentDetailPage', params: { id: contents.ContentID }} ">READ MORE</button>
+                            <router-link class="btn btn-primary" :to="{name: 'ContentDetailPage', params: { id: content.ContentID }} ">READ MORE</router-link>
                         </div>
                     </div>
 
@@ -129,6 +129,7 @@ export default {
             axios.get('/api/content')
             .then(response => {
                 this.contents=response.data;
+                this.$store.commit('setContent', this.contents)
                 console.log(this.contents)
             })
         },
@@ -165,11 +166,11 @@ export default {
         },
         imageUpload(event) {
             let formData = new FormData()
-            formData.append('file', event.target.files[0].photo)
+            formData.append('file', event.target.files[0])
             axios.post('/api/content/savefile', formData)
             .then((response => {
-            this.PhotoFileName=response.data
-            console.log(this.PhotoFileName)
+                this.PhotoFileName=response.data
+                console.log(this.PhotoFileName)
             })) 
         },
         async fetchItems() {

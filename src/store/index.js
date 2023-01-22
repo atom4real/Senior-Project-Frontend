@@ -35,6 +35,10 @@ export default createStore({
             state.email = email
             state.isAuthenticated = true
         },
+        setContent(state, content) {
+            state.content = content
+            state.isAuthenticated = true
+        },
         removeToken(state) {
             state.token = ''
             state.isAuthenticated = false
