@@ -9,6 +9,7 @@ import ContentPage from '@/views/ContentPage.vue'
 import ContentDetailPage from '@/views/ContentDetailPage.vue'
 import CreateContents from '@/views/CreateContents.vue'
 import ProfilePage from '@/views/ProfilePage.vue'
+import GPSTrackingPage from '@/views/GPSTrackingPage.vue'
 import AuthService from '@/services/AuthService.js';
 import axios from 'axios'
 
@@ -63,6 +64,11 @@ const routes = [
         path: '/profile',
         name: 'ProfilePage',
         component: ProfilePage
+    },
+    {
+        path: '/gpstracking',
+        name: 'GPSTrackingPage',
+        component: GPSTrackingPage
     },
 ]
 

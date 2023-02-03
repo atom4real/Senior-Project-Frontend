@@ -38,6 +38,7 @@
         </li>
         <!-- <li data-theme="winter"><a>Settings</a></li> -->
         <li data-theme="winter" v-if="this.$store.state.role === 'admin'"><router-link :to="{ name: 'CreateContents' }">Create content</router-link></li>
+        <li data-theme="winter" v-if="this.$store.state.role === 'admin'"><router-link :to="{ name: 'GPSTrackingPage' }">GPS Tracking</router-link></li>
         <li data-theme="winter" v-if="!this.$store.state.token"><router-link :to="{ name: 'Login' }">Login</router-link></li>
         <li data-theme="winter" v-if="this.$store.state.token"><a @click="logout">Logout</a></li>
       </ul>

@@ -83,6 +83,7 @@ export default {
             this.$router.push('/')
         })
         .catch(error => {
+          alert(`Incorrect password or account doesn't exist.`)
           console.log(error)
         })
         // axios
