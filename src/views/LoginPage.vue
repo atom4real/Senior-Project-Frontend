@@ -1,5 +1,5 @@
 <template>
-<div class="bg-no-repeat bg-cover bg-center relative" :style="{'background-image': 'linear-gradient(0deg, rgba(35, 58, 80, 0.87), rgba(35, 58, 80, 0.87)), url(src/assets/img/bg-login.jpg)'}"><div class="absolute bg-gradient-to-b opacity-75 inset-0 z-0"></div>
+<div class="bg-no-repeat bg-cover bg-center relative" :style="{'background-image': 'linear-gradient(0deg, rgba(35, 58, 80, 0.87), rgba(35, 58, 80, 0.87)), url(src/assets/img/bg-masthead.jpg)'}"><div class="absolute bg-gradient-to-b opacity-75 inset-0 z-0"></div>
   <div class="min-h-screen sm:flex sm:flex-row mx-0 justify-center">
       <div class="flex justify-center self-center  z-10">
         <form @submit.prevent="submitForm">
