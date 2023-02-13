@@ -9,12 +9,12 @@
                 <div v-for="allevents in AllEvents" :key="allevents.registration">
                     <a class="cursor-pointer" ref="truck" @click="event(allevents.location.latitude, allevents.location.longitude)">
                         <li data-theme="winter" class="transition ease-in-out duration-250 bg-white hover:bg-gray-200">
-                            <div class="grid grid-cols-3 py-3">
-                                <div class="col-span-1 flex justify-center">
+                            <div class="grid grid-cols-6 py-3">
+                                <div class="col-span-2 flex justify-center">
                                     <img v-if="allevents.ignition == true" class="h-24" src="http://127.0.0.1:8000/Photos/online-truck.png" alt="truck-icon"/>
                                     <img v-if="allevents.ignition == false" class="h-24" src="http://127.0.0.1:8000/Photos/offline-truck.png" alt="truck-icon"/>
                                 </div>
-                                <div class="col-span-2 text-left py-5">
+                                <div class="col-span-3 text-left py-5">
                                     <p>License plate: {{ allevents.registration }}</p>
                                     <div v-if="allevents.ignition == true">
                                         Status: <span class="text-green-500">Online</span>
@@ -22,6 +22,12 @@
                                     <div v-if="allevents.ignition == false">
                                         Status: <span class="text-red-500">Offline</span>
                                     </div>
+                                </div>
+                                <div class="col-span-1 text-left py-5 flex justify-center">
+                                    <!-- Detail truck btn -->
+                                    <button @click.prevent="detailTruck(allevents.registration)" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 ml-1 px-2 rounded">
+                                        DETAIL
+                                    </button>
                                 </div>
                             </div>
                             <hr />
@@ -54,9 +60,9 @@ const GOOGLE_MAPS_API_KEY = 'AIzaSyCVP7k1BcfzC5E8gJvLSx9exiSTh1M16-k'
     name: 'GPSTrackingPage',
     components: {SubMenu},
     setup() {
-        var Events = []
-        var Events2 = []
-        const { coords } = useGeolocation()
+        let Events = []
+        let Events2 = []
+        // const { coords } = useGeolocation()
         const currPos = computed(() => ({
             //Thailand location
             lat: 15.8700,
@@ -175,6 +181,9 @@ const GOOGLE_MAPS_API_KEY = 'AIzaSyCVP7k1BcfzC5E8gJvLSx9exiSTh1M16-k'
                 this.AllEvents = response.data.data
                 console.log(this.AllEvents)
             })
+        },
+        detailTruck(id) {
+            this.$router.push({ name: 'DetailTruck', params: { id: id }})
         },
     },
     created() {

@@ -11,6 +11,10 @@ import CreateContents from '@/views/CreateContents.vue'
 import ProfilePage from '@/views/ProfilePage.vue'
 import GPSTrackingPage from '@/views/GPSTrackingPage.vue'
 import AuthService from '@/services/AuthService.js';
+import History from '@/views/GPSTrackingPage-submenu/History.vue'
+import List from '@/views/GPSTrackingPage-submenu/List.vue'
+import DetailTruck from '@/views/GPSTrackingPage-submenu/DetailTruck.vue'
+import HistoryTruck from '@/views/GPSTrackingPage-submenu/HistoryTruck.vue'
 import axios from 'axios'
 
 const routes = [
@@ -69,6 +73,28 @@ const routes = [
         path: '/gpstracking',
         name: 'GPSTrackingPage',
         component: GPSTrackingPage
+    },
+    {
+        path: '/history',
+        name: 'History',
+        component: History
+    },
+    {
+        path: '/list',
+        name: 'List',
+        component: List
+    },
+    {
+        path: '/detail-truck/:id',
+        name: 'DetailTruck',
+        component: DetailTruck,
+        props: true,
+    },
+    {
+        path: '/truck-history/:id',
+        name: 'HistoryTruck',
+        component: HistoryTruck,
+        props: true,
     },
 ]
 

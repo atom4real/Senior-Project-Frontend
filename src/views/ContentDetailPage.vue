@@ -21,7 +21,7 @@ export default {
     return {
       content: null
     }
-  },
+  },  
   created() {
     // fetch event (by id) and set local event data
     axios.get(`/api/content/` + this.id + `/`)
