@@ -48,10 +48,10 @@ import SubMenu from '../../components/SubMenu.vue';
                 .then(
                 response => {
                     for(let i=0 ; i<10 ; i++){
-                        // this.AllEvents.push(response.data[i].data)
-                        for(let x=0 ; x<10 ; x++){
-                            this.AllEvents.push(response.data[i].data)
-                        }
+                        this.AllEvents.push(response.data[i].data)
+                    //     for(let x=0 ; x<10 ; x++){
+                    //         this.AllEvents.push(response.data[i].data)
+                    //     }
                     }
                     console.log(this.AllEvents)
                 })
