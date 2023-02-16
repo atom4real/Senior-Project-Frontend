@@ -19,8 +19,8 @@
                 <div v-if="allevents.registration === id">
                     <div class="grid grid-cols-4 gap-4">
                         <div>
-                            <p :style="{'background': '#323948'}">Start time: {{ FormData(allevents.start_timestamp) }}</p>
-                            <p>End time: {{ FormData(allevents.end_timestamp) }}</p>
+                            <p :style="{'background': '#323948'}">Start time: {{ FormatData(allevents.start_timestamp) }}</p>
+                            <p>End time: {{ FormatData(allevents.end_timestamp) }}</p>
                             <br>
                         </div>
                         <div>
@@ -67,18 +67,26 @@ import SubMenu from '../../components/SubMenu.vue';
                     console.log(this.AllEvents)
                 })
             },
-            FormData(data) {
+            FormatData(data) {
+                let originalString = data
                 let dateRegex = /^\d{4}-\d{2}-\d{2}/
                 let timeRegex = /\d{2}:\d{2}:\d{2}/
 
-                let dateMatch = data.match(dateRegex);
-                let timeMatch = data.match(timeRegex);
-
+                let dateMatch = originalString.match(dateRegex);
+                let timeMatch = originalString.match(timeRegex);
                 return `${dateMatch[0]} @ ${timeMatch[0]}`
-            }
+            },
+            systemAlert() {
+                console.log("alert!")
+                alert("Loading the data for 20 secs...")
+                setTimeout(() => {
+                    alert("If data is not show, the data is null")
+                }, 17000);
+            },
         },
         created() {
-            this.fetchHistory()
-        }
+            this.fetchHistory(),
+            this.systemAlert()
+        },
     }
 </script>

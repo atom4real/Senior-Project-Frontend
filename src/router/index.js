@@ -15,6 +15,7 @@ import History from '@/views/GPSTrackingPage-submenu/History.vue'
 import List from '@/views/GPSTrackingPage-submenu/List.vue'
 import DetailTruck from '@/views/GPSTrackingPage-submenu/DetailTruck.vue'
 import HistoryTruck from '@/views/GPSTrackingPage-submenu/HistoryTruck.vue'
+import SetUser from '@/views/SetUser.vue'
 import axios from 'axios'
 
 const routes = [
@@ -94,6 +95,12 @@ const routes = [
         path: '/truck-history/:id',
         name: 'HistoryTruck',
         component: HistoryTruck,
+        props: true,
+    },
+    {
+        path: '/set-user',
+        name: 'SetUser',
+        component: SetUser,
         props: true,
     },
 ]

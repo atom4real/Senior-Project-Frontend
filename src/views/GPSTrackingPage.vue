@@ -25,9 +25,9 @@
                                 </div>
                                 <div class="col-span-1 text-left py-5 flex justify-center">
                                     <!-- Detail truck btn -->
-                                    <button @click.prevent="detailTruck(allevents.registration)" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 ml-1 px-2 rounded">
+                                    <!-- <button @click.prevent="detailTruck(allevents.registration)" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 ml-1 px-2 rounded">
                                         DETAIL
-                                    </button>
+                                    </button> -->
                                 </div>
                             </div>
                             <hr />
