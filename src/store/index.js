@@ -12,6 +12,9 @@ export default createStore({
         initializeStore(state) {
             if (localStorage.getItem('token')) {
                 state.token = localStorage.getItem('token')
+                state.name = localStorage.getItem('name')
+                state.role = localStorage.getItem('role')
+                state.email = localStorage.getItem('email')
                 state.isAuthenticated = true
             }
             else {

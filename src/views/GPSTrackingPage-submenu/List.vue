@@ -70,15 +70,15 @@
                     </div>
                     <!-- Chassis number -->
                     <div class="py-3" :style="{'background': '#323948'}">
-                        {{ allevents.chassis_number }}
+                        <p>{{ allevents.chassis_number }}</p>
                     </div>
                     <!-- Odemeter -->
                     <div class="py-3">
-                        {{ allevents.odometer }}
+                        <p>{{ allevents.odometer }}</p>
                     </div>
                     <!-- Last updated -->
                     <div class="py-3" :style="{'background': '#323948'}">
-                        {{ FormatData(allevents.event_ts) }}
+                        <p>{{ FormatData(allevents.event_ts) }}</p>
                 </div>
             </div>
         </div>

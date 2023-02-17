@@ -10,12 +10,12 @@ import ContentDetailPage from '@/views/ContentDetailPage.vue'
 import CreateContents from '@/views/CreateContents.vue'
 import ProfilePage from '@/views/ProfilePage.vue'
 import GPSTrackingPage from '@/views/GPSTrackingPage.vue'
+import GPSCustomerTrackingPage from '@/views/GPSCustomerTrackingPage.vue'
 import AuthService from '@/services/AuthService.js';
 import History from '@/views/GPSTrackingPage-submenu/History.vue'
 import List from '@/views/GPSTrackingPage-submenu/List.vue'
 import DetailTruck from '@/views/GPSTrackingPage-submenu/DetailTruck.vue'
 import HistoryTruck from '@/views/GPSTrackingPage-submenu/HistoryTruck.vue'
-import SetUser from '@/views/SetUser.vue'
 import axios from 'axios'
 
 const routes = [
@@ -26,18 +26,17 @@ const routes = [
         props: true,
         children: [
             {
-                path: 'about',
-                name: 'About',
-                component: About,
-                props: true
-            },
-            {
                 path: 'contents',
                 name: 'Contents',
                 component: Contents,
                 props: true
             }
         ]
+    },
+    {
+        path: '/about',
+        name: 'about',
+        component: About,
     },
     {
         path: '/login',
@@ -76,6 +75,11 @@ const routes = [
         component: GPSTrackingPage
     },
     {
+        path: '/tracking-page',
+        name: 'GPSCustomerTrackingPage',
+        component: GPSCustomerTrackingPage
+    },
+    {
         path: '/history',
         name: 'History',
         component: History
@@ -95,12 +99,6 @@ const routes = [
         path: '/truck-history/:id',
         name: 'HistoryTruck',
         component: HistoryTruck,
-        props: true,
-    },
-    {
-        path: '/set-user',
-        name: 'SetUser',
-        component: SetUser,
         props: true,
     },
 ]

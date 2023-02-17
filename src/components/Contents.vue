@@ -22,9 +22,14 @@
                 </div>
             </div>
         </div>     
-        <div class="mb-52 mt-16 btn bg-white hover:bg-blue-700 text-black hover:text-white font-bold py-2 px-4 border border-white hover:border-white " :style="{'border-radius': '30px'}">
-            <router-link :to="{ name: 'ContentPage' }">READ MORE!</router-link>
-        </div>
+        <router-link :to="{ name: 'ContentPage' }">
+            <div class="mb-52 mt-16 btn bg-white hover:bg-blue-700 text-black hover:text-white font-bold py-2 px-4 border border-white hover:border-white " :style="{'border-radius': '30px'}">
+                READ MORE!
+            </div>
+        </router-link>
+       
+            
+        
     </div>
 </template>
 <script>
@@ -33,7 +38,6 @@ export default {
     name: 'ContentPage',
     data() {
         return {
-            content_id: '',
             contents: [],
             title: '',
             description: '',
@@ -44,7 +48,6 @@ export default {
     },
     mounted() {
         this.refeshData()
-        this.getContentID()
     },
     methods: {
         refeshData() {
@@ -53,9 +56,6 @@ export default {
                 this.contents=response.data;
                 console.log(this.contents)
             })
-        },
-        getContentID(id) {
-            this.content_id=id;
         },
     }
 }

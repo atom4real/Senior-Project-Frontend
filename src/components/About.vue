@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full h-full bg-no-repeat bg-cover bg-center bf-fixed" 
+    <div id="about" class="w-full h-full bg-no-repeat bg-cover bg-center bf-fixed" 
     :style="{'background-image': 'linear-gradient(0deg, rgba(35, 58, 80, 0.87), rgba(35, 58, 80, 0.87)), url(src/assets/img/bg-about.jpg)'}">
         <div class="font-sans font-bold pt-80 pb-3 text-3xl text-white">About us</div>
             <div class="inline-flex justify-center items-center w-full">

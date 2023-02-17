@@ -14,7 +14,7 @@
 <div ref="contents">
     <Contents></Contents>
 </div>
-<div ref="about">
+<div>
     <About></About>
 </div>
 </template>
@@ -51,7 +51,7 @@ export default {
                 })
         },
         scrollMeTo(refName) {
-            var element = this.$refs[refName];
+            let element = this.$refs[refName];
             element.scrollIntoView({ behavior: 'smooth' });
         }
     }
