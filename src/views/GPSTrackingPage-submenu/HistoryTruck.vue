@@ -61,20 +61,20 @@ import SubMenu from '../../components/SubMenu.vue';
                 axios.get('/api/get_trip')
                 .then(
                 response => {
-                    for(let i=0 ; i<10 ; i++){
+                    for(const i in response.data){
                         this.AllEvents.push(response.data[i].data)
                     }
-                    console.log(this.AllEvents)
+                    console.log(response)
                 })
             },
             FormatData(data) {
-                let originalString = data
+                let originalString = String(data)
                 let dateRegex = /^\d{4}-\d{2}-\d{2}/
                 let timeRegex = /\d{2}:\d{2}:\d{2}/
 
-                let dateMatch = originalString.match(dateRegex);
-                let timeMatch = originalString.match(timeRegex);
-                return `${dateMatch[0]} @ ${timeMatch[0]}`
+                let dateMatch = String(originalString.match(dateRegex));
+                let timeMatch = String(originalString.match(timeRegex));
+                return `${dateMatch} @ ${timeMatch}`
             },
             systemAlert() {
                 console.log("alert!")

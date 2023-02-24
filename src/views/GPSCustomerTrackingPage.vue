@@ -152,11 +152,10 @@ const GOOGLE_MAPS_API_KEY = 'AIzaSyCVP7k1BcfzC5E8gJvLSx9exiSTh1M16-k'
                                         infowindow.open({
                                             anchor: marker,
                                             map,
-                                        }),
+                                        })
                                         map.setZoom(13)
                                         map.setCenter(marker.getPosition())
                                     })
-                                    
                                 }
                             }
                         })

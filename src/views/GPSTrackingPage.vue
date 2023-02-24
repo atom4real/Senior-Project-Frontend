@@ -7,7 +7,7 @@
             <!-- List of trucks -->
             <ul data-theme="winter">
                 <div v-for="allevents in AllEvents" :key="allevents.registration">
-                    <a class="cursor-pointer" ref="truck" @click="event(allevents.location.latitude, allevents.location.longitude)">
+                    <a class="cursor-pointer" ref="truck" @click="event(allevents.location.latitude, allevents.location.longitude, allevents.registration)">
                         <li data-theme="winter" class="transition ease-in-out duration-250 bg-white hover:bg-gray-200">
                             <div class="grid grid-cols-6 py-3">
                                 <div class="col-span-2 flex justify-center">
@@ -122,7 +122,7 @@ const GOOGLE_MAPS_API_KEY = 'AIzaSyCVP7k1BcfzC5E8gJvLSx9exiSTh1M16-k'
         })
 
         //bring to a truck location when click a truck component.
-        function event(lat, lng) {
+        function event(lat, lng, id) {
             const location = {
                 lat: lat,
                 lng: lng
@@ -136,33 +136,39 @@ const GOOGLE_MAPS_API_KEY = 'AIzaSyCVP7k1BcfzC5E8gJvLSx9exiSTh1M16-k'
                 Events2 = response.data.data
                 for(const element of Events2) {
                     const marker = new google.maps.Marker({
-                        position: { lat: element.location.latitude, lng: element.location.longitude },
+                        position: location,
                         map,
                         icon: "http://127.0.0.1:8000/Photos/truck_location.png",
                         title: "Hello World!",
                     })
-                    const contentString =
-                        '<div id="content">' +
-                        '<div id="siteNotice">' +
-                        "</div>" +
-                        '<h1 id="firstHeading" class="firstHeading">Vehicle ID: '+ element.registration +'</h1>' +
-                        '<h2>Status Ignition: '+ element.ignition +'</h2>'+
-                        '<h2>Speed '+ element.speed +' km/h</h2>'+
-                        '<h2>Location: '+ element.location.position_description +'</h2>'+
-                        '<h2>Last updated: '+ element.location.updated +'</h2>'+
-                        "</div>"
-                    const infowindow = new google.maps.InfoWindow({
+                    if(element.registration == id) {
+                        const contentString =
+                            '<div id="content">' +
+                            '<div id="siteNotice">' +
+                            "</div>" +
+                            '<h1 id="firstHeading" class="firstHeading">Vehicle ID: '+ element.registration +'</h1>' +
+                            '<h2>Status Ignition: '+ element.ignition +'</h2>'+
+                            '<h2>Speed '+ element.speed +' km/h</h2>'+
+                            '<h2>Location: '+ element.location.position_description +'</h2>'+
+                            '<h2>Last updated: '+ element.location.updated +'</h2>'+
+                            "</div>"
+                        const infowindow = new google.maps.InfoWindow({
                         content: contentString,
                         ariaLabel: "content",
                     })
-                    marker.addListener("click", () => {
-                        infowindow.open({
-                            anchor: marker,
+                    infowindow.open({
+                            anchor: new google.maps.Marker({
+                                position: location,
+                                map,
+                                icon: "http://127.0.0.1:8000/Photos/truck_location.png",
+                                title: "Hello World!",
+                            }),
                             map,
                         }),
                         map.setZoom(13)
                         map.setCenter(marker.getPosition())
-                    })
+                        
+                    }
                 }
             })
         }
@@ -179,6 +185,7 @@ const GOOGLE_MAPS_API_KEY = 'AIzaSyCVP7k1BcfzC5E8gJvLSx9exiSTh1M16-k'
             axios.get('/api/get-events')
             .then(response => {
                 this.AllEvents = response.data.data
+                console.log("Fetch data successfully!")
                 console.log(this.AllEvents)
             })
         },

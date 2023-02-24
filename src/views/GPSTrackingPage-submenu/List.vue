@@ -9,7 +9,7 @@
                 <div>Location</div>
                 <div>Fuel</div>
                 <div>Chassis number</div>
-                <div>Odemeter</div>
+                <div>Odometer </div>
                 <div>Last updated</div>
             </div>
             <div v-for="allevents in AllEvents" :key="allevents.registration">
