@@ -15,7 +15,7 @@ COPY . .
 
 # Build the application
 RUN npm cache clean --force
-RUN run build -prod
+RUN run build
 
 # Expose port 3000
 EXPOSE 3000
