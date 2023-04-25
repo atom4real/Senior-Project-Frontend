@@ -1,24 +1,12 @@
-# Use an official Node.js runtime as a parent image
-FROM node:14-alpine
-
-# Set the working directory to /app
+# build stage
+FROM node:lts-alpine as build-stage
 WORKDIR /app
-
-# Copy package.json and package-lock.json to the container
 COPY package*.json ./
-
-# Install dependencies
 RUN npm install
-
-# Copy the rest of the application files to the container
 COPY . .
-
-# Build the application
-RUN npm cache clean --force              
 RUN npm run build
-
-# Expose port 3000
-EXPOSE 3000
-
-# Start the application
-CMD ["npm", "run", "start"]
+# production stage
+FROM nginx:stable-alpine as production-stage
+COPY --from=build-stage /app/dist /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
