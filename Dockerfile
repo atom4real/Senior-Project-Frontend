@@ -14,6 +14,7 @@ RUN npm install
 COPY . .
 
 # Build the application
+RUN npm cache clean --force              
 RUN npm run build
 
 # Expose port 3000
