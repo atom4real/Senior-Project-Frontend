@@ -1,15 +1,6 @@
-# version: '3'
-# services:
-#   app:
-#     image: "atom4real/frontend-project:lastest"
-#     ports:
-#       - "3000:3000"
-#     command: npm run serve
 version: "3"
-
 services:
   vite:
     build: .
     ports:
-      - "3000:80"
-    command: npm run dev
+      - "8080:3000"
