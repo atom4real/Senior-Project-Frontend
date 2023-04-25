@@ -1,23 +1,41 @@
 import apiClient from '@/services/AxiosClient.js'
 import Store from '@/store'
+import axios from 'axios';
+import router from '@/router'
 
 export default {
-  login(user) {
-    return apiClient
-      .post('/api/login', {
-        username: user.username,
+  login(formData) {
+    axios.defaults.headers.common['Authorization'] = ''
+    localStorage.removeItem('token')
+    
+    console.log(formData)
+    axios
+      .post('/api/login', formData)
+      .then(response => {
+        const token = response.data.jwt
+        const role = response.data.role
+        const name = response.data.name
+        const email = response.data.email
 
-        password: user.password
+        Store.commit('setToken', token)
+        Store.commit('setRole', role)
+        Store.commit('setName', name)
+        Store.commit('setEmail', email)
+        console.log(email)
+
+        console.log(response)
+        axios.defaults.headers.common['Authorization'] = 'JWT' + token
+        localStorage.setItem("token", token)
+        localStorage.setItem("role", role)
+        localStorage.setItem("name", name)
+        localStorage.setItem("email", email)
+        router.push('/')
       })
-      .then((response) => {
-        localStorage.setItem('token', response.data.token)
-        localStorage.setItem('user', JSON.stringify(response.data.user))
-        Store.currentUser = response.data.user
-        return Promise.resolve(response.data)
-      })
-      .catch((error) => {
-        return Promise.reject(error)
-      })
+      .catch(error => {
+        alert(`Incorrect password or account doesn't exist.`)
+        console.log(error)
+      }
+      )
   },
   logout() {
     localStorage.removeItem('token')
@@ -60,15 +78,15 @@ export default {
 
     let watcher = null
     onMounted(() => {
-        if(isSupport)
-            watcher = navigator.geolocation.watchPosition(
-                position => (coords.value = position.coords)
-            )
+      if (isSupport)
+        watcher = navigator.geolocation.watchPosition(
+          position => (coords.value = position.coords)
+        )
     })
     onUnmounted(() => {
-        if(watcher) navigator.geolocation.clearWatch(watcher)
+      if (watcher) navigator.geolocation.clearWatch(watcher)
     })
 
     return { coords, isSupport }
-}
+  }
 }

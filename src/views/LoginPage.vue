@@ -36,6 +36,7 @@
 
 <script>
 import axios from 'axios';
+import AuthService from '../services/AuthService';
 
 export default {
   name: 'LoginPage',
@@ -60,7 +61,8 @@ export default {
         const RoleInfo = {
           role: this.role
         }
-
+        // AuthService.login(formData)
+        
         axios
         .post('/api/login', formData)
         .then(response => {

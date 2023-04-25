@@ -1,5 +1,6 @@
 <template>
     <SubMenu />
+    <div v-if="this.$store.state.role === 'admin' && this.$store.state.token">
     <div class="flex justify-center">
         <form class="w-full max-w-sm rounded-lg" @submit.prevent="submitFindingTrackingIDForm">
             <div class="flex justify-center">
@@ -70,6 +71,7 @@
             </a>
         </div>
     </ul>
+    </div>
 </template>
 <script>
 import axios from 'axios';

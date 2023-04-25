@@ -1,6 +1,6 @@
 <template>
     <SubMenu />
-        <div class="mx-8">
+        <div class="mx-8" v-if="this.$store.state.role === 'admin' && this.$store.state.token">
             <div class="grid grid-cols-9 gap-4 py-5 font-bold">
                 <div>License plate</div>
                 <div>Status</div>

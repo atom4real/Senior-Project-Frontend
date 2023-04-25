@@ -18,7 +18,7 @@
         </form>
     </div> -->
 
-    <div v-if="this.$store.state.role === 'admin' && this.$store.state.isAuthenticated">
+    <!-- <div v-if="this.$store.state.role === 'admin' && this.$store.state.isAuthenticated"> -->
         <div class="max-w-xl w-full lg:max-w-full lg:flex justify-center mt-32">
   <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t px-16 lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
     <div class="mb-8">
@@ -42,7 +42,7 @@
             </div>
             </div>
         </form>
-    </div>
+    <!-- </div> -->
     </div>
     
     <!-- <div class="flex items-center">

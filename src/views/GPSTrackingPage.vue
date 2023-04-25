@@ -2,7 +2,7 @@
     <div ref="SubMenu">
         <SubMenu />
     </div>
-    <div class="grid grid-cols-3 bg-white">
+    <div class="grid grid-cols-3 bg-white" v-if="this.$store.state.role === 'admin' && this.$store.state.token" >
         <div class="col-span-1 bg-white overflow-y-scroll" style="height: 87vh">
             <!-- List of trucks -->
             <ul data-theme="winter">

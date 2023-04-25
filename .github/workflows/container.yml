@@ -1,0 +1,23 @@
+name: Push Docker Image to Docker Hub
+on:
+  push:
+    branches:
+      - prod
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Login to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          registry: docker.io
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Build Docker Image
+        run: docker build . -t my-docker-image
+      - name: Tag Docker Image with Docker Hub Repository
+        run: docker tag my-docker-image docker.io/atom4real/frontend-senior-project:latest
+      - name: Push Docker Image to Docker Hub
+        run: docker push docker.io/atom4real/frontend-senior-project:latest
