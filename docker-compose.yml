@@ -1,6 +1,6 @@
-version: "3"
+version: "3.3"
 services:
-  vite:
-    build: .
-    ports:
-      - "8080:3000"
+    web:
+        image: "atom4real/frontend-senior:latest"
+        ports: 
+            - 8001:80
