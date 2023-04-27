@@ -11,25 +11,24 @@
 # EXPOSE 80
 # CMD ["nginx", "-g", "daemon off;"]
 # Base image
-FROM node:14-alpine
+FROM node:16
 
 # Set working directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json
-COPY package*.json ./
-
 # Install dependencies
+COPY package*.json ./
 RUN npm install
 
-# Copy project files
+# Copy the rest of the files
 COPY . .
 
-# Build the project
+# Build the app
 RUN npm run build
 
-# Expose port 3000
+# Expose the app's port
 EXPOSE 3000
 
-# Start the Vite server
+# Start the app
 CMD ["npm", "run", "dev"]
+
