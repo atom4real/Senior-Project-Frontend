@@ -9,8 +9,8 @@
 import axios from 'axios'
 import AuthService from '@/services/AuthService.js'
 import Home from '@/views/Home.vue'
-import NavBar from './components/NavBar.vue'
-import FooterVue from './components/Footer.vue'
+import NavBar from '@/components/NavBar.vue'
+import FooterVue from '@/components/Footer.vue'
 
 export default {
   name: 'App',
