@@ -178,7 +178,7 @@ export default {
             const response = await axios.get(`/api/content-list?page=1`, {
             params: {
                 page: this.currentPage,
-                page_size: 3
+                page_size: 6
                 }
             })
             this.contents = response.data.results
