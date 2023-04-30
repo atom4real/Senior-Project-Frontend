@@ -61,12 +61,3 @@ jobs:
           context: .
           push: true
           tags: atom4real/frontend-senior:latest
-      - name: prepare the docker-compose run
-        run: |    
-          mkdir frontend-project       
-          cp docker-compose.yml frontend-project/docker-compose.yml        
-          cd frontend-project        
-          docker-compose -H ${{ secrets.HOST_SERVER }} down          
-          docker-compose -H ${{ secrets.HOST_SERVER }} pull
-          docker-compose -H ${{ secrets.HOST_SERVER }} up -d
-  
