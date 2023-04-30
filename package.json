@@ -12,6 +12,7 @@
     "@googlemaps/js-api-loader": "^1.15.1",
     "axios": "^1.2.1",
     "cors": "^2.8.5",
+    "esbuild": "^0.17.18",
     "flowbite": "^1.6.2",
     "tw-elements": "^1.0.0-alpha13",
     "vee-validate": "^2.2.15",
