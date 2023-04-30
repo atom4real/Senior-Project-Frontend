@@ -14,7 +14,7 @@
     </div>
   </div>
   <div class="navbar-center" data-theme="winter">
-    <a class="btn btn-ghost normal-case text-xl" data-theme="winter"><router-link :to="{ name: 'Home' }"><img src="http://127.0.0.1:8000/Photos/logo.png" class="h-12" alt="logo"/></router-link></a>
+    <a class="btn btn-ghost normal-case text-xl" data-theme="winter"><router-link :to="{ name: 'Home' }"><img src="http://18.136.106.213:8000/Photos/logo.png" class="h-12" alt="logo"/></router-link></a>
   </div>
   <div class="navbar-end" data-theme="winter">
     <!-- <button class="btn btn-ghost btn-circle" data-theme="winter">
@@ -23,9 +23,9 @@
     <div class="dropdown dropdown-end" data-theme="winter">
       <label tabindex="0" class="btn btn-ghost btn-circle avatar" data-theme="winter">
         <div class="w-10 rounded-full">
-          <img v-if="this.$store.state.role === 'admin'" :src="'http://127.0.0.1:8000/Photos/admin.png'" alt="img" />
-          <img v-if="this.$store.state.role === 'customer'" :src="'http://127.0.0.1:8000/Photos/customer.png'" alt="img" />
-          <img v-else src="http://127.0.0.1:8000/Photos/anonymous.png" data-theme="winter" alt="img"/>
+          <img v-if="this.$store.state.role === 'admin'" :src="'http://18.136.106.213:8000/Photos/admin.png'" alt="img" />
+          <img v-if="this.$store.state.role === 'customer'" :src="'http://18.136.106.213:8000/Photos/customer.png'" alt="img" />
+          <img v-else src="http://18.136.106.213:8000/Photos/anonymous.png" data-theme="winter" alt="img"/>
         </div>
       </label>
       <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52" data-theme="winter">

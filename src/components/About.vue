@@ -1,6 +1,6 @@
 <template>
     <div id="about" class="w-full h-full bg-no-repeat bg-cover bg-center bf-fixed" 
-    :style="{'background-image': 'linear-gradient(0deg, rgba(35, 58, 80, 0.87), rgba(35, 58, 80, 0.87)), url(http://127.0.0.1:8000/Photos/bg-about.jpg)'}">
+    :style="{'background-image': 'linear-gradient(0deg, rgba(35, 58, 80, 0.87), rgba(35, 58, 80, 0.87)), url(http://18.136.106.213:8000/Photos/bg-about.jpg)'}">
         <div class="font-sans font-bold pt-80 pb-3 text-3xl text-white">About us</div>
             <div class="inline-flex justify-center items-center w-full">
                 <hr class="my-6 w-3/5 h-1 bg-blue-700 border-0">

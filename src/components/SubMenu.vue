@@ -3,7 +3,7 @@
             <li>
                 <router-link class="active:bg-blue-700" :to="{ name: 'GPSTrackingPage' }">
                     <div>
-                        <img src="http://127.0.0.1:8000/Photos/locator.png" class="h-4" alt="map" />
+                        <img src="http://18.136.106.213:8000/Photos/locator.png" class="h-4" alt="map" />
                     </div>
                     <div>
                         Map
@@ -13,7 +13,7 @@
             <li>
                 <router-link class="active:bg-blue-700" :to="{ name: 'History' }">
                     <div>
-                        <img src="http://127.0.0.1:8000/Photos/history.png" class="h-4" alt="history" />
+                        <img src="http://18.136.106.213:8000/Photos/history.png" class="h-4" alt="history" />
                     </div>
                     <div>
                         History
@@ -23,7 +23,7 @@
              <li>
                 <router-link class="active:bg-blue-700" :to="{ name: 'List' }">
                     <div>
-                        <img src="http://127.0.0.1:8000/Photos/list-text.png" class="h-4" alt="history" />
+                        <img src="http://18.136.106.213:8000/Photos/list-text.png" class="h-4" alt="history" />
                     </div>
                     <div>
                         List
