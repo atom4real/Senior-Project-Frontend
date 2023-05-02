@@ -10,8 +10,8 @@
             <div class="card w-96 bg-base-100 shadow-xl">
                 <figure >
                     <div class="p-10 w-50">
-                        <img v-if="this.$store.state.role === 'admin'" :src="'http://127.0.0.1:8000/Photos/admin.png'" alt="img" />
-                        <img v-if="this.$store.state.role === 'customer'" :src="'http://127.0.0.1:8000/Photos/customer.png'" alt="img" />
+                        <img v-if="this.$store.state.role === 'admin'" :src="'http://54.169.123.14:8000/Photos/admin.png'" alt="img" />
+                        <img v-if="this.$store.state.role === 'customer'" :src="'http://54.169.123.14:8000/Photos/customer.png'" alt="img" />
                     </div>
                 </figure>
                 <div class="card-body py-10">
