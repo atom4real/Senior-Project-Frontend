@@ -131,7 +131,7 @@ const GOOGLE_MAPS_API_KEY = 'AIzaSyCVP7k1BcfzC5E8gJvLSx9exiSTh1M16-k'
                                     const marker = new google.maps.Marker({
                                         position: { lat: element.location.latitude, lng: element.location.longitude },
                                         map,
-                                        icon: "http://54.169.123.14:8000/Photos/truck_location.png",
+                                        icon: "http://175.41.168.88:8000/Photos/truck_location.png",
                                         title: "Hello World!",
                                     })
                                     map.setZoom(13)

@@ -1,7 +1,7 @@
 <template>
   <div v-if="content" class="w-full h-full pb-32 bg-no-repeat bg-cover bg-center bf-fixed" :style="{'background': '#1A4268C2'}">
     <div class="flex justify-center py-20">
-        <img :src="'http://127.0.0.1:8000/Photos/'+content.PhotoFileName" alt="Shoes" class="rounded-xl" />
+        <img :src="'http://175.41.168.88:8000/Photos/'+content.PhotoFileName" alt="Shoes" class="rounded-xl" />
     </div>
     <div class="text-black card mx-72 py-10 bg-white shadow-xl">
         <div class="text-4xl font-bold pb-8">

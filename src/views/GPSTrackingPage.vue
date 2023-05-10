@@ -11,8 +11,8 @@
                         <li data-theme="winter" class="transition ease-in-out duration-250 bg-white hover:bg-gray-200">
                             <div class="grid grid-cols-6 py-3">
                                 <div class="col-span-2 flex justify-center">
-                                    <img v-if="allevents.ignition == true" class="h-24" src="http://54.169.123.14:8000/Photos/online-truck.png" alt="truck-icon"/>
-                                    <img v-if="allevents.ignition == false" class="h-24" src="http://54.169.123.14:8000/Photos/offline-truck.png" alt="truck-icon"/>
+                                    <img v-if="allevents.ignition == true" class="h-24" src="http://175.41.168.88:8000/Photos/online-truck.png" alt="truck-icon"/>
+                                    <img v-if="allevents.ignition == false" class="h-24" src="http://175.41.168.88:8000/Photos/offline-truck.png" alt="truck-icon"/>
                                 </div>
                                 <div class="col-span-3 text-left py-5">
                                     <p>License plate: {{ allevents.registration }}</p>
@@ -92,7 +92,7 @@ const GOOGLE_MAPS_API_KEY = 'AIzaSyCVP7k1BcfzC5E8gJvLSx9exiSTh1M16-k'
                     const marker = new google.maps.Marker({
                         position: { lat: element.location.latitude, lng: element.location.longitude },
                         map,
-                        icon: "http://54.169.123.14:8000/Photos/truck_location.png",
+                        icon: "http://175.41.168.88:8000/Photos/truck_location.png",
                         title: "Hello World!",
                     })
                     const contentString =
@@ -138,7 +138,7 @@ const GOOGLE_MAPS_API_KEY = 'AIzaSyCVP7k1BcfzC5E8gJvLSx9exiSTh1M16-k'
                     const marker = new google.maps.Marker({
                         position: location,
                         map,
-                        icon: "http://54.169.123.14:8000/Photos/truck_location.png",
+                        icon: "http://175.41.168.88:8000/Photos/truck_location.png",
                         title: "Hello World!",
                     })
                     if(element.registration == id) {
@@ -160,7 +160,7 @@ const GOOGLE_MAPS_API_KEY = 'AIzaSyCVP7k1BcfzC5E8gJvLSx9exiSTh1M16-k'
                             anchor: new google.maps.Marker({
                                 position: location,
                                 map,
-                                icon: "http://54.169.123.14:8000/Photos/truck_location.png",
+                                icon: "http://175.41.168.88:8000/Photos/truck_location.png",
                                 title: "Hello World!",
                             }),
                             map,

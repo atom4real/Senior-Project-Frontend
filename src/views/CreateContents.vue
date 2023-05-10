@@ -72,7 +72,7 @@ export default {
             description: '',
             date: '',
             PhotoFileName: 'content4.jpeg',
-            PhotoPath: 'http://54.169.123.14:8000/Photos/',
+            PhotoPath: 'http://175.41.168.88:8000/Photos/',
         }
     },
     mounted() {
