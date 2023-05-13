@@ -10,7 +10,7 @@
                     </div>
                 </router-link>
             </li>
-            <li>
+            <!-- <li>
                 <router-link class="active:bg-blue-700" :to="{ name: 'History' }">
                     <div>
                         <img src="http://175.41.168.88:8000/Photos/history.png" class="h-4" alt="history" />
@@ -19,7 +19,7 @@
                         History
                     </div>
                 </router-link>
-            </li>
+            </li> -->
              <li>
                 <router-link class="active:bg-blue-700" :to="{ name: 'List' }">
                     <div>

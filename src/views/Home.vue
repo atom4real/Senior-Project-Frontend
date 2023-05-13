@@ -14,19 +14,14 @@
 <div ref="contents">
     <Contents></Contents>
 </div>
-<div>
-    <About></About>
-</div>
 </template>
 <script>
 import axios from 'axios';
-import About from '@/components/About.vue';
 import Contents from '@/components/Contents.vue';
 
 export default {
     name: 'Home',
     components: {
-    About,
     Contents
   },
     data() {

@@ -23,7 +23,7 @@
                      </figure>
                     <div class="card-body items-center text-center">
                         <h2 class="card-title">{{ content.ContentTitle }}</h2>
-                        <p>{{ content.ContentDescription }}</p>
+                        <!-- <p>{{ content.ContentDescription }}</p> -->
                         <p>Posted: {{ content.DateOfPosting }}</p>
                         <div class="card-actions">
                             <router-link class="btn btn-primary" :to="{name: 'ContentDetailPage', params: { id: content.ContentID }} ">READ MORE</router-link>
