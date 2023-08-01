@@ -1,5 +1,6 @@
 <template>
-    <ul class="menu menu-horizontal bg-base-100 rounded-box text-white shadow-md">
+    <div class="bg-slate-700">
+        <ul class="menu menu-horizontal bg-base-700 rounded-box text-white shadow-md">
             <li>
                 <router-link class="active:bg-blue-700" :to="{ name: 'GPSTrackingPage' }">
                     <div>
@@ -31,6 +32,7 @@
                 </router-link>
             </li>
         </ul>
+    </div>
 </template>
 <script>
 import SubMenu from '../components/SubMenu.vue';

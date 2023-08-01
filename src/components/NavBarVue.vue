@@ -10,7 +10,7 @@
         <li data-theme="winter"><router-link :to="{ name: 'about' }">About us</router-link></li>
         <li data-theme="winter"><router-link :to="{ name: 'ContentPage' }">View contents</router-link></li>
         <!-- For add role -->
-        <!-- <li data-theme="winter"><router-link :to="{ name: 'Register' }">Register</router-link></li> --> 
+        <li data-theme="winter"><router-link :to="{ name: 'Register' }">Register</router-link></li> 
       </ul>
     </div>
   </div>
